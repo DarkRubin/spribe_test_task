@@ -1,0 +1,13 @@
+spring:
+  liquibase:
+    enabled: true
+  config:
+    import: optional:file:resources/.env[.properties]
+  application:
+    name: spribe_test_task
+  datasource:
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:secret_password}
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/mydatabase}
+  jpa:
+    open-in-view: false

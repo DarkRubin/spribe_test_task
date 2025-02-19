@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: /changeset/V1__create_currencies_table.yaml
+      relativeToChangelogFile: true
