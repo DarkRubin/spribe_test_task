@@ -7,3 +7,15 @@ services:
       - POSTGRES_USER=myuser
     ports:
       - '5433:5432'
+
+  redis:
+    image: redis:7.4
+    restart: "no"
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: redis-cli ping
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 5
