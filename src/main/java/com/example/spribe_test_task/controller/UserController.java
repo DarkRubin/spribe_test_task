@@ -15,6 +15,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -56,12 +57,13 @@ public class UserController {
             tags = { "User" }
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "User created successfully"),
+            @ApiResponse(responseCode = "201", description = "User created successfully"),
             @ApiResponse(responseCode = "400", description = "Bad request due by invalid user data body")
     })
     public ResponseEntity<User> create(
-            @Parameter(description = "Credentials of new user (username, password)", required = true) @RequestBody UserDto user) {
-        return ResponseEntity.ok(userService.create(user));
+            @Parameter(description = "Credentials of new user (username, password)", required = true) @RequestBody UserDto userDto) {
+        User user = userService.create(userDto);
+        return ResponseEntity.created(URI.create(user.getId().toString())).body(user);
     }
 
     @GetMapping("/{id}")
