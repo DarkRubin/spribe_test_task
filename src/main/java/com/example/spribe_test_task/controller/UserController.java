@@ -19,7 +19,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/v1/users")
 @RequiredArgsConstructor
 @Tag(name = "User Controller", description = "Controller for managing User entity, provides create and search operation")
 public class UserController {

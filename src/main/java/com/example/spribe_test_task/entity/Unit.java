@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,8 +34,8 @@ public class Unit {
     @PrimaryKeyJoinColumn(referencedColumnName = "unit_id")
     private UnitProperties properties;
 
-    @OneToMany
+    @OneToMany(targetEntity = Event.class)
     @JsonIgnore
-    private List<Event> events;
+    private List<Event> events = new ArrayList<>();
 
 }

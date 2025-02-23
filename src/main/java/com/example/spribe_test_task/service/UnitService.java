@@ -36,11 +36,11 @@ public class UnitService {
     }
 
     public List<Unit> findAllAvailable(Pageable pageable, Instant start, Instant end) {
-        return unitRepository.findByEvents_EndTimeBeforeOrEvents_StartTimeAfter(pageable, start, end).getContent();
+        return unitRepository.findAllAvailable(pageable, start, end).getContent();
     }
 
     public Long countAllAvailable(Instant start, Instant end) {
-        return unitRepository.countAllByEvents_StartTimeAfterOrEvents_EndTimeBefore(start, end);
+        return unitRepository.countAllAvailable(start, end);
     }
 
     @Transactional
@@ -72,6 +72,10 @@ public class UnitService {
     }
 
     public List<Unit> findByNumberOfRooms(Pageable pageable, Integer rooms) {
-        return unitRepository.findByProperties_RoomsCount(pageable, rooms);
+        return unitRepository.findByProperties_RoomsCount(pageable, rooms).getContent();
+    }
+
+    public List<Unit> findAllAvailableByCountOfRooms(Pageable pageable, Integer rooms, Instant start, Instant end) {
+        return unitRepository.findAllAvailableByRoomsCount(pageable, rooms, start, end).getContent();
     }
 }
