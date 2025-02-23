@@ -44,7 +44,7 @@ CREATE TABLE units
 -- changeset Vadim:1740239202258-5
 CREATE TABLE users
 (
-    id       INTEGER     NOT NULL,
+    id       SERIAL     NOT NULL,
     username VARCHAR(20) NOT NULL,
     password VARCHAR(70) NOT NULL,
     CONSTRAINT pk_users PRIMARY KEY (id)

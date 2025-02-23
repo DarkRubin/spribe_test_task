@@ -53,28 +53,28 @@ VALUES
     ('d66f2148-3a9e-4d90-ac6d-0c1535d12c83','2025-02-09 18:00:00', '2025-02-26 20:00:00', 'ce7ad47f-82f8-444e-98fd-5214cf09bc71');
 
 -- changeset Vadim:2350239232258-4
-INSERT INTO users (id, username, password)
+INSERT INTO users (username, password)
 VALUES
-    (1, 'alice', 'hashed_pass_1'),
-    (2, 'bob', 'hashed_pass_2'),
-    (3, 'charlie', 'hashed_pass_3'),
-    (4, 'david', 'hashed_pass_4'),
-    (5, 'eva', 'hashed_pass_5'),
-    (6, 'frank', 'hashed_pass_6'),
-    (7, 'grace', 'hashed_pass_7'),
-    (8, 'henry', 'hashed_pass_8'),
-    (9, 'isabel', 'hashed_pass_9'),
-    (10, 'jack', 'hashed_pass_10'),
-    (11, 'kate', 'hashed_pass_11'),
-    (12, 'leo', 'hashed_pass_12'),
-    (13, 'mia', 'hashed_pass_13'),
-    (14, 'nathan', 'hashed_pass_14'),
-    (15, 'olivia', 'hashed_pass_15'),
-    (16, 'peter', 'hashed_pass_16'),
-    (17, 'quincy', 'hashed_pass_17'),
-    (18, 'rachel', 'hashed_pass_18'),
-    (19, 'steve', 'hashed_pass_19'),
-    (20, 'tina', 'hashed_pass_20');
+    ('alice', 'hashed_pass_1'),
+    ('bob', 'hashed_pass_2'),
+    ('charlie', 'hashed_pass_3'),
+    ('david', 'hashed_pass_4'),
+    ('eva', 'hashed_pass_5'),
+    ('frank', 'hashed_pass_6'),
+    ('grace', 'hashed_pass_7'),
+    ('henry', 'hashed_pass_8'),
+    ('isabel', 'hashed_pass_9'),
+    ('jack', 'hashed_pass_10'),
+    ('kate', 'hashed_pass_11'),
+    ('leo', 'hashed_pass_12'),
+    ('mia', 'hashed_pass_13'),
+    ('nathan', 'hashed_pass_14'),
+    ('olivia', 'hashed_pass_15'),
+    ('peter', 'hashed_pass_16'),
+    ('quincy', 'hashed_pass_17'),
+    ('rachel', 'hashed_pass_18'),
+    ('steve', 'hashed_pass_19'),
+    ('tina', 'hashed_pass_20');
 
 -- changeset Vadim:2350239232258-5
 INSERT INTO payments (event_id, user_id)
