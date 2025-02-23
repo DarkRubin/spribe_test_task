@@ -1,40 +1,37 @@
 package com.example.spribe_test_task.entity;
 
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
-@Getter @Setter
+@Getter
+@Setter
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "units")
 public class Unit {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(nullable = false)
+    @Column(name = "id", nullable = false)
     private UUID id;
 
+    @Size(max = 256)
+    @Column(name = "description", length = 256)
     private String description;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
-    private UnitProperties properties;
+    @NotNull
+    @Column(name = "price", nullable = false)
+    private BigDecimal price;
 
-    private BigDecimal cost;
+    @OneToOne
+    @PrimaryKeyJoinColumn(referencedColumnName = "unit_id")
+    private UnitProperties properties;
 
     @OneToMany
     private List<Event> events;
 
-
-    public Unit(String description, UnitProperties properties, BigDecimal cost) {
-        this.description = description;
-        this.properties = properties;
-        this.cost = cost;
-    }
 }
