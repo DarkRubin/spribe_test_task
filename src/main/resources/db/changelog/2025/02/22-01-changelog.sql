@@ -1,0 +1,1 @@
+CREATE TYPE accommodation_type AS ENUM ('home', 'flat', 'apartments');
