@@ -21,14 +21,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-@Tag(name = "User Controller", description = " Controller for managing User entity, provides create and search operation")
+@Tag(name = "User Controller", description = "Controller for managing User entity, provides create and search operation")
 public class UserController {
 
     private final UserService userService;
 
     @Operation(
             summary = "Get all users with pagination",
-            description = "Retrieve a paginated list of users, with specified the page number, size, and sorting order",
+            description = "Retrieve a paginated list of users, with specified the page number, size, and sorting",
             tags = { "User" }
     )
     @ApiResponses(value = {
@@ -61,7 +61,8 @@ public class UserController {
             @ApiResponse(responseCode = "400", description = "Bad request due by invalid user data body")
     })
     public ResponseEntity<User> create(
-            @Parameter(description = "Credentials of new user (username, password)", required = true) @RequestBody UserDto userDto) {
+            @Parameter(description = "Credentials of new user (username, password)", required = true)
+            @RequestBody UserDto userDto) {
         User user = userService.create(userDto);
         return ResponseEntity.created(URI.create(user.getId().toString())).body(user);
     }

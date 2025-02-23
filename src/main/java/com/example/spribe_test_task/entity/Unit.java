@@ -1,5 +1,6 @@
 package com.example.spribe_test_task.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -16,6 +17,7 @@ import java.util.UUID;
 @Table(name = "units")
 public class Unit {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
     private UUID id;
 
@@ -32,6 +34,7 @@ public class Unit {
     private UnitProperties properties;
 
     @OneToMany
+    @JsonIgnore
     private List<Event> events;
 
 }

@@ -1,5 +1,6 @@
 package com.example.spribe_test_task.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -17,8 +18,9 @@ public class UnitProperties {
     private UUID id;
 
     @MapsId
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "unit_id", nullable = false)
+    @JsonIgnore
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "unit_id", nullable = false, referencedColumnName = "id")
     private Unit unit;
 
     @NotNull
@@ -29,7 +31,7 @@ public class UnitProperties {
     @Column(name = "rooms_count", nullable = false)
     private Integer roomsCount;
 
-
+    @Enumerated(EnumType.STRING)
     @Column(name = "type", columnDefinition = "accommodation_type",  nullable = false)
     private AccommodationType type;
 

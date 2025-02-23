@@ -17,18 +17,18 @@ VALUES ('7f2afa72-87ad-4d86-bda1-83178740874d', 'Cool description', 2000),
 
 -- changeset Vadim:2350239232258-2
 INSERT INTO public.unit_properties (unit_id, floor, rooms_count, type)
-VALUES ('7f2afa72-87ad-4d86-bda1-83178740874d', 1, 2, 'flat'::accommodation_type),
-       ('0a816f59-811d-49f9-94ad-20842c92643a', 2, 3, 'home'::accommodation_type),
-       ('3ed9020f-a8c6-4a78-a252-15221352a90f', 4, 1, 'apartments'::accommodation_type),
-       ('c398a109-4ab4-49cb-9c28-81aff44e8278', 4, 2, 'flat'::accommodation_type),
-       ('bfbd9a5a-a6c8-48d8-9933-e2c9529153a7', 7, 7, 'flat'::accommodation_type),
-       ('c60fe36d-a7b3-4a98-8caa-3d5d7d85f53e', 2, 3, 'home'::accommodation_type),
-       ('8d438da4-3450-49e6-a567-d8fe118869e3', 3, 4, 'apartments'::accommodation_type),
-       ('8948c5c9-5486-404e-970a-e9f8e3c4299d', 5, 3, 'home'::accommodation_type),
-       ('694a1fad-525e-474a-96da-7bd8036d428a', 6, 4, 'apartments'::accommodation_type),
-       ('76953943-06ff-43cd-84b6-43be7f2d5592', 7, 2, 'flat'::accommodation_type),
-       ('7719c8cd-276e-45fe-b54b-b2f5160e155b', 8, 3, 'home'::accommodation_type),
-       ('ce7ad47f-82f8-444e-98fd-5214cf09bc71', 9, 4, 'apartments'::accommodation_type);
+VALUES ('7f2afa72-87ad-4d86-bda1-83178740874d', 1, 2, 'FLAT'),
+       ('0a816f59-811d-49f9-94ad-20842c92643a', 2, 3, 'FLAT'),
+       ('3ed9020f-a8c6-4a78-a252-15221352a90f', 4, 1, 'APARTMENTS'),
+       ('c398a109-4ab4-49cb-9c28-81aff44e8278', 4, 2, 'FLAT'),
+       ('bfbd9a5a-a6c8-48d8-9933-e2c9529153a7', 7, 7, 'FLAT'),
+       ('c60fe36d-a7b3-4a98-8caa-3d5d7d85f53e', 2, 3, 'FLAT'),
+       ('8d438da4-3450-49e6-a567-d8fe118869e3', 3, 4, 'APARTMENTS'),
+       ('8948c5c9-5486-404e-970a-e9f8e3c4299d', 5, 3, 'FLAT'),
+       ('694a1fad-525e-474a-96da-7bd8036d428a', 6, 4, 'APARTMENTS'),
+       ('76953943-06ff-43cd-84b6-43be7f2d5592', 7, 2, 'FLAT'),
+       ('7719c8cd-276e-45fe-b54b-b2f5160e155b', 8, 3, 'FLAT'),
+       ('ce7ad47f-82f8-444e-98fd-5214cf09bc71', 9, 4, 'APARTMENTS');
 
 -- changeset Vadim:2350239232258-3
 INSERT INTO events (id, start_time, end_time, unit_id)
