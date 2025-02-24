@@ -33,10 +33,12 @@ public class PaymentService {
                 .orElseThrow(EntityNotFoundException::new);
         User user = userRepository.findById(paymentDto.getUserId())
                 .orElseThrow(EntityNotFoundException::new);
-        Payment payment = new Payment(event, user);
+
         if (!event.getUser().getId().equals(user.getId())) {
             throw new IllegalArgumentException("User id not match");
         }
+
+        Payment payment = new Payment(event, user);
         event.setPayment(payment);
         return paymentRepository.save(payment);
     }

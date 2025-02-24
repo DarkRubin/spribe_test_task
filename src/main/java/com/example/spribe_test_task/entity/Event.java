@@ -58,7 +58,4 @@ public class Event {
         this.unit = unit;
     }
 
-    public Event(UUID id) {
-        this.id = id;
-    }
 }

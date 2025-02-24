@@ -1,6 +1,8 @@
 -- liquibase formatted sql
 
 -- changeset Vadim:1740239202258-1
+SET TIME ZONE 'UTC';
+
 CREATE TABLE events
 (
     id            UUID                        NOT NULL DEFAULT gen_random_uuid(),

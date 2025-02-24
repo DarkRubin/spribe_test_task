@@ -9,6 +9,4 @@ public interface UnitMapper {
 
     @Mapping(target = "price", source = "cost")
     Unit toEntity(UnitDto unitDto);
-
-    UnitDto toDto(Unit unit);
 }

@@ -1,5 +1,6 @@
 package com.example.spribe_test_task.scheduler;
 
+import com.example.spribe_test_task.entity.Event;
 import com.example.spribe_test_task.repository.EventRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.List;
 
 @Slf4j
 @EnableScheduling

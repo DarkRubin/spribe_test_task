@@ -1,13 +1,11 @@
 package com.example.spribe_test_task.advice;
 
-import com.example.spribe_test_task.entity.Event;
 import com.example.spribe_test_task.excption.EventCreationException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.data.mapping.PropertyReferenceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

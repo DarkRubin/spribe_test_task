@@ -2,6 +2,8 @@ services:
   postgres:
     image: 'postgres:17'
     environment:
+      - TZ=UTC
+      - PGTZ=UTC
       - POSTGRES_DB=mydatabase
       - POSTGRES_PASSWORD=secret
       - POSTGRES_USER=myuser
