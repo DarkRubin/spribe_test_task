@@ -24,6 +24,6 @@ public interface EventRepository extends JpaRepository<Event, UUID> {
 
     @Modifying
     @Transactional
-    @Query("delete Event e where e.payment is null and e.creationTime <= ?1")
+    @Query("delete Event e where not exists (select p from Payment p where p.event = e) and e.creationTime <= ?1")
     Integer deleteByPaymentDeadlineExpired(Instant paymentDeadline);
 }

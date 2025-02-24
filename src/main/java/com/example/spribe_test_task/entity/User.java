@@ -28,4 +28,7 @@ public class User {
     @Column(name = "password", nullable = false, length = 70)
     private String password;
 
+    public User(Long id) {
+        this.id = id;
+    }
 }

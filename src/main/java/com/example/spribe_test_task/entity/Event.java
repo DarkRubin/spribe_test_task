@@ -36,6 +36,7 @@ public class Event {
     @Column(name = "creation_time", insertable = false, updatable = false)
     private Instant creationTime;
 
+    @JsonIgnore
     @JoinColumn(referencedColumnName = "id")
     @OneToOne(fetch = FetchType.LAZY)
     private Payment payment;
@@ -55,5 +56,9 @@ public class Event {
         this.endTime = endTime;
         this.user = user;
         this.unit = unit;
+    }
+
+    public Event(UUID id) {
+        this.id = id;
     }
 }
