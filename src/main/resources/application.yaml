@@ -13,3 +13,8 @@ spring:
     open-in-view: false
     hibernate:
       ddl-auto: none
+  mvc:
+    format:
+      date: iso
+api:
+  event-cancel-time: 15m

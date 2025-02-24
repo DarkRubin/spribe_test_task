@@ -9,8 +9,9 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.UUID;
 
-public interface UnitRepository extends JpaRepository<Unit, Long> {
+public interface UnitRepository extends JpaRepository<Unit, UUID> {
 
     Page<Unit> findAllByPriceBetween(Pageable pageable, BigDecimal costAfter, BigDecimal costBefore);
 
