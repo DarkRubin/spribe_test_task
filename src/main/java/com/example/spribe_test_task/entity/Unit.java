@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
@@ -16,6 +17,7 @@ import java.util.UUID;
 @Setter
 @Entity
 @Table(name = "units")
+@NoArgsConstructor
 public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -38,4 +40,8 @@ public class Unit {
     @JsonIgnore
     private List<Event> events = new ArrayList<>();
 
+    public Unit(String description, BigDecimal price) {
+        this.description = description;
+        this.price = price;
+    }
 }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
@@ -12,6 +13,7 @@ import java.util.UUID;
 @Setter
 @Entity
 @Table(name = "unit_properties")
+@NoArgsConstructor
 public class UnitProperties {
     @Id
     @Column(name = "unit_id", nullable = false)
@@ -35,4 +37,9 @@ public class UnitProperties {
     @Column(name = "type", columnDefinition = "accommodation_type",  nullable = false)
     private AccommodationType type;
 
+    public UnitProperties(Integer floor, Integer roomsCount, AccommodationType type) {
+        this.floor = floor;
+        this.roomsCount = roomsCount;
+        this.type = type;
+    }
 }

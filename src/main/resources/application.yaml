@@ -13,8 +13,12 @@ spring:
     open-in-view: false
     hibernate:
       ddl-auto: none
+    show-sql: true
   mvc:
     format:
       date: iso
+  cache:
+    redis:
+      time-to-live: 15m
 api:
   event-cancel-time: 15m
